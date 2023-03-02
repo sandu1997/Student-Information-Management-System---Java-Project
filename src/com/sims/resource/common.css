@@ -1,0 +1,143 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 28, 2020, 6:54:16 PM
+    Author     : acer
+*/
+
+.fields {
+    -fx-background-color: transparent;
+    -fx-border-color: #0598ff;
+    -fx-border-width: 0px 0px 2px 0px;
+}
+
+.main-background {
+    -fx-background-color: #0598ff;
+}
+
+.btn-blue {
+    -fx-background-color: #0598ff;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+}
+
+.main-font {
+    -fx-text-fill: #0598ff;
+    -fx-font-size: 20px;
+        ;
+}
+
+/*----------button----------*/
+.btn-update,.btn-add,.btn-delete,.btn-ok,.btn-reset{
+    -fx-background-radius: 25px;
+    -fx-pref-height: 35px;
+    -fx-pref-width: 190px;
+    -fx-font-size: 24px;
+    -fx-font-weight: 400;
+    -fx-text-fill: white;
+    -fx-font-family: Roboto;
+    -fx-font-style: normal;
+    -fx-padding: 0;
+}
+
+.btn-update{
+    -fx-background-color: #EDD817;
+}
+
+.btn-add{
+    -fx-background-color: #5CED17;
+}
+
+.btn-delete{
+    -fx-background-color: #ED1717;
+}
+
+.btn-reset{
+    -fx-background-color: #C4C4C4;
+}
+
+.btn-ok{
+    -fx-background-color: #0598FF;
+}
+
+.btn-search{
+    -fx-background-color: #014778;
+    -fx-background-radius: 10px;
+    -fx-pref-height: 27px;
+    -fx-pref-width: 119px;
+    -fx-font-size: 18px;
+    -fx-font-weight: 400;
+    -fx-text-fill: white;
+    -fx-font-family: Roboto;
+    -fx-font-style: normal;
+    -fx-padding: 0;
+}
+
+.btn-update:hover,.btn-add:hover,.btn-delete:hover,.btn-ok:hover,.btn-reset:hover,.btn-search:hover{
+    -fx-opacity: 0.8;
+}
+
+.btn-update:pressed,.btn-add:pressed,.btn-delete:pressed,.btn-ok:pressed,.btn-reset:pressed,.btn-search:pressed{
+    -fx-opacity: 0.6;
+}
+/*----------button----------*/
+
+
+
+/*----------text box----------*/
+.txtbox-search{
+    -fx-padding: 0px 10px 0px 10px;
+    -fx-background-radius: 25px;
+    -fx-pref-height: 27px;
+    -fx-background-color: white;
+    -fx-font-size: 18px;       
+}
+
+.txtbox-form{
+    -fx-padding: 0px 10px 0px 10px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-border-style: solid;
+    -fx-pref-height: 50px;
+    -fx-background-color: #f2f2f2;
+    -fx-border-color: #014778;
+    -fx-font-size: 24px;
+}
+
+.txtbox-form:focused {
+    -fx-background-color:white;
+}
+/*----------text box----------*/
+
+/*----------Dash board----------*/
+.dashbord-right {
+    -fx-background-color: #ffffff;
+    /*-fx-background-radius: 25;*/
+}
+
+.dashbord-right-titlebar{
+    -fx-pref-height: 5em;
+    -fx-background-color: #006FBC;
+}
+
+.dashbord-right-titlebar-lable {
+    -fx-font-size: 24px;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+.dashbord-left-pane {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 0 100px 100px 0; 
+}
+
+.dashboard-left-btn {
+    -fx-background-color: #0598ff;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 18px;
+    -fx-padding:15px 15px 15px 70px;
+    -fx-cursor:hand;
+}

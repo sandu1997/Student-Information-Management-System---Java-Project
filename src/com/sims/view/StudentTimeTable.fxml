@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="timetable_vbox" prefHeight="800.0" prefWidth="1000.0" stylesheets="@../resource/common.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sims.control.StudentTimeTableController">
+   <children>
+      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="dashbord-right-titlebar">
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+         <children>
+            <Label layoutX="14.0" layoutY="13.0" styleClass="dashbord-right-titlebar-lable" text="TimeTable" />
+         </children>
+      </Pane>
+      <ImageView fx:id="imageView" fitHeight="675.0" fitWidth="972.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </VBox.margin>
+      </ImageView>
+   </children>
+</VBox>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="334.0" prefWidth="680.0" style="-fx-background-color: white;" stylesheets="@../resource/common.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sims.control.TechnicalOfficerMedicalsUpdateController">
+   <children>
+      <VBox prefHeight="290.0" prefWidth="680.0">
+         <children>
+            <Pane prefHeight="60.0" prefWidth="680.0">
+               <children>
+                  <Label layoutX="24.0" layoutY="13.0" style="-fx-font-size: 24px; -fx-text-fill: #0598FF;" text="Update Medicals" />
+               </children>
+            </Pane>
+            <Pane prefHeight="209.0" prefWidth="656.0" style="-fx-border-color: #014778; -fx-border-radius: 25px;">
+               <children>
+                  <Pane layoutX="63.0" prefHeight="95.0" prefWidth="530.0">
+                     <children>
+                        <Label layoutY="8.0" style="-fx-font-size: 18px; -fx-text-fill: #014778;" text="Reference No." />
+                        <TextField fx:id="txtRefNo" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="247.0" promptText="Enter No." styleClass="txtbox-form" />
+                        <TextField fx:id="txtStudentID" layoutX="283.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="247.0" promptText="TG/XXXX/XXX" styleClass="txtbox-form" />
+                        <Label layoutX="283.0" layoutY="8.0" style="-fx-font-size: 18px; -fx-text-fill: #014778;" text="Student ID" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="66.0" layoutY="98.0" prefHeight="95.0" prefWidth="530.0">
+                     <children>
+                        <Label layoutY="6.0" style="-fx-font-size: 18px; -fx-text-fill: #014778;" text="Status" />
+                        <ComboBox fx:id="combStatus" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="247.0" promptText="Select" styleClass="txtbox-form" />
+                     </children>
+                  </Pane>
+               </children>
+               <VBox.margin>
+                  <Insets left="12.0" right="12.0" />
+               </VBox.margin>
+            </Pane>
+         </children>
+      </VBox>
+      <Button fx:id="btnUpdate" layoutX="249.0" layoutY="283.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#updateActionController" styleClass="btn-update" text="Update" />
+      <Button fx:id="btnOk" layoutX="478.0" layoutY="283.0" mnemonicParsing="false" onAction="#okActionController" styleClass="btn-ok" text="Ok" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="notice_vbox" prefHeight="800.0" prefWidth="1000.0" stylesheets="@../resource/common.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sims.control.StudentCourseDetailsController">
+   <children>
+      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="dashbord-right-titlebar">
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+         <children>
+            <Label layoutX="14.0" layoutY="13.0" styleClass="dashbord-right-titlebar-lable" text="Course Details" />
+         </children>
+      </Pane>
+      <Label fx:id="label1" alignment="CENTER" prefHeight="39.0" prefWidth="1022.0" text="Information and Communication Technology">
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" top="20.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="52.0" prefWidth="1000.0">
+         <children>
+            <Label fx:id="label_level" alignment="CENTER" prefHeight="35.0" prefWidth="286.0" text="Level 1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_sem" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="286.0" text="Semester 2">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <TableView fx:id="tableview" prefHeight="559.0" prefWidth="960.0">
+         <columns>
+            <TableColumn fx:id="colcoursecode" prefWidth="230.3999900817871" text="Course Code" />
+            <TableColumn fx:id="colcoursename" prefWidth="448.8000030517578" text="Course Name" />
+            <TableColumn fx:id="colcredit" prefWidth="240.0" text="Credit" />
+         </columns>
+         <VBox.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="30.0" />
+         </VBox.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TableView>
+   </children>
+</VBox>

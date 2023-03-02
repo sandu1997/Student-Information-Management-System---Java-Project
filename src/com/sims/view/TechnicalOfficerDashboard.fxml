@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1267.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sims.control.TechnicalOfficerDashboardController">
+   <children>
+      <BorderPane fx:id="mainPane" prefHeight="800.0" prefWidth="1000.0" stylesheets="@../resource/common.css">
+         <left>
+            <VBox prefHeight="800.0" prefWidth="280.0" styleClass="main-background" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="298.0" styleClass="dashbord-right-titlebar-lable" text="SIMS" />
+                  <AnchorPane prefHeight="159.0" prefWidth="210.0" styleClass="dashbord-left-pane">
+                     <VBox.margin>
+                        <Insets right="70.0" />
+                     </VBox.margin>
+                     <children>
+                        <StackPane layoutX="50.0" layoutY="2.0">
+                           <children>
+                              <Circle fill="DODGERBLUE" radius="78.0" stroke="BLACK" strokeType="INSIDE" />
+                              <FontAwesomeIcon fill="WHITE" glyphName="USER" size="9em" wrappingWidth="103.82860374450684" />
+                           </children>
+                        </StackPane>
+                     </children>
+                  </AnchorPane>
+                  <Label fx:id="lbl_userName" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="18.0" prefWidth="298.0" text="prageeth@gmali.com" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="228.0" prefHeight="18.0" prefWidth="298.0" text="Technical Officer">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button fx:id="btn_notice" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btn_noticeActionHandel" prefHeight="26.0" prefWidth="367.0" styleClass="dashboard-left-btn" text="Notice">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="NEWSPAPER_ALT" size="1.5em" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btn_timetable" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="340.0" mnemonicParsing="false" onAction="#btn_timetableActionHandel" prefHeight="26.0" prefWidth="367.0" styleClass="dashboard-left-btn" text="Time Table">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="HISTORY" size="1.5em" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btn_attendance" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="265.0" mnemonicParsing="false" onAction="#btn_AttendanceActionHandel" prefHeight="26.0" prefWidth="367.0" styleClass="dashboard-left-btn" text="Attendance">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="CHECK" size="1.5em" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btn_medical" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="303.0" mnemonicParsing="false" onAction="#btn_MedicalActionHandel" prefHeight="26.0" prefWidth="367.0" styleClass="dashboard-left-btn" text="Medicals">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="PLUS_SQUARE" size="1.5em" wrappingWidth="26.81429100036621" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btn_SignOut" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btn_SignOutActionHandel" prefHeight="26.0" prefWidth="367.0" style="-fx-background-color: #006FBC;" styleClass="dashboard-left-btn" text="Sign Out">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="1.5em" />
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <right>
+            <VBox fx:id="notice_vbox" prefHeight="800.0" prefWidth="1000.0" BorderPane.alignment="CENTER_LEFT">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="945.0" styleClass="dashbord-right-titlebar">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label layoutX="14.0" layoutY="13.0" styleClass="dashbord-right-titlebar-lable" text="Notice" />
+                        <Button fx:id="btn_notice_view" layoutX="921.0" layoutY="13.0" mnemonicParsing="false" onAction="#btn_notice_viewActionhandel" styleClass="btn-blue" text="View" />
+                     </children>
+                  </Pane>
+                  <TableView fx:id="table_view" onMouseClicked="#table_viewOnMouseCicked" prefHeight="622.0" prefWidth="1000.0">
+                     <columns>
+                        <TableColumn fx:id="tale_col_date" prefWidth="196.79998779296875" text="Date" />
+                        <TableColumn fx:id="table_col_titel" minWidth="0.0" prefWidth="566.3999938964844" text="Titel" />
+                        <TableColumn fx:id="table_col_publisher" prefWidth="196.0" text="publisher" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>

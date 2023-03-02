@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: white;" stylesheets="@../resource/common.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sims.control.TechnicalOfficerAttendanceController">
+   <children>
+      <VBox prefHeight="800.0" prefWidth="1000.0">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0" styleClass="dashbord-right-titlebar">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <children>
+                  <Label layoutX="14.0" layoutY="13.0" styleClass="dashbord-right-titlebar-lable" text="Attendance" />
+                  <Button fx:id="btnSearch" alignment="CENTER" graphicTextGap="8.0" layoutX="852.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleButtonAction" styleClass="btn-search" text="Search">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SEARCH" onDragDetected="#searchBtnActionHandler" size="1.2em" />
+                     </graphic>
+                  </Button>
+                  <ComboBox fx:id="combCourseID" editable="true" layoutX="304.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="286.0" promptText="Course ID" styleClass="txtbox-search" />
+                  <ComboBox fx:id="combType" editable="true" layoutX="609.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="213.0" promptText="Lecture Type" styleClass="txtbox-search" />
+               </children>
+            </Pane>
+            <Pane prefHeight="59.0" prefWidth="1000.0">
+               <children>
+                  <TextField fx:id="txtStuId" layoutX="306.0" layoutY="17.0" prefHeight="29.0" prefWidth="286.0" promptText="Student ID" style="-fx-border-color: blue; -fx-border-radius: 25px;" styleClass="txtbox-search" />
+                  <ComboBox fx:id="combStatus" editable="true" layoutX="611.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="213.0" promptText="Status" style="-fx-border-radius: 25px; -fx-border-color: blue;" styleClass="txtbox-search" />
+               </children>
+            </Pane>
+            <TableView fx:id="tableAttendance" prefHeight="566.0" prefWidth="979.0">
+              <columns>
+                  <TableColumn fx:id="colSessionID" editable="false" prefWidth="170.3999971151352" resizable="false" sortable="false" text="Session ID" />
+                  <TableColumn fx:id="colStudent" editable="false" prefWidth="334.40000915527344" resizable="false" sortable="false" text="Student ID" />
+                  <TableColumn fx:id="colDateTime" editable="false" minWidth="0.0" prefWidth="275.9999694824219" resizable="false" sortable="false" text="Date and Time" />
+                  <TableColumn fx:id="colStatus" editable="false" minWidth="0.0" prefWidth="188.79998779296875" resizable="false" sortable="false" text="Status" />
+              </columns>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </TableView>
+            <Pane prefHeight="83.0" prefWidth="1000.0" style="-fx-background-color: white;">
+               <children>
+                  <Button fx:id="btnAdd" layoutX="184.0" layoutY="32.0" mnemonicParsing="false" onAction="#addAtendaceBtnActionHandler" styleClass="btn-add" text="Add" />
+                  <Button fx:id="btnDelete" layoutX="657.0" layoutY="32.0" mnemonicParsing="false" onAction="#deleteAttendanceBtnActionHandler" styleClass="btn-delete" text="Delete" />
+                  <Button fx:id="btnUpdate" layoutX="421.0" layoutY="32.0" mnemonicParsing="false" onAction="#updateAtendaceBtnActionHandler" styleClass="btn-update" text="Update" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>    
+</AnchorPane>

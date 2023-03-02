@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="vbox_StuGradeAndGPA" prefHeight="800.0" prefWidth="1000.0" stylesheets="@../resource/common.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sims.control.LecturerStuGradeAndGPAController">
+   <children>
+      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="dashbord-right-titlebar">
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+         <children>
+            <Label layoutX="14.0" layoutY="13.0" styleClass="dashbord-right-titlebar-lable" text="Grade &amp; GPA" />
+         </children>
+      </Pane>
+      <Button fx:id="btn_StuBack" mnemonicParsing="false" onAction="#btn_StuBackActionPerformed" styleClass="btn-search" text="Student">
+         <graphic>
+            <FontAwesomeIcon fill="#05f759" glyphName="ARROW_LEFT" />
+         </graphic>
+         <VBox.margin>
+            <Insets left="50.0" top="10.0" />
+         </VBox.margin>
+      </Button>
+      <TabPane prefHeight="672.0" prefWidth="899.0" style="-fx-border-color: #00ccff; -fx-border-style: solid;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Grade">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="254.0" prefWidth="1000.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="69.0" prefWidth="888.0" style="-fx-border-style: solid; -fx-border-color: #00ccff;" AnchorPane.bottomAnchor="540.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                           <children>
+                              <ComboBox fx:id="cmb_CourseCode" prefHeight="26.0" prefWidth="147.0" promptText="Course Code" style="-fx-background-radius: 22; -fx-border-radius: 22;">
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                              <Button fx:id="btn_SearchCourse" mnemonicParsing="false" onAction="#btn_SearchCourseActionPerformed" prefHeight="26.0" prefWidth="118.0" styleClass="btn-search" text="Search">
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" right="20.0" top="20.0" />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#f2ecec" glyphName="SEARCH" />
+                                 </graphic>
+                              </Button>
+                              <ComboBox fx:id="cmb_GradeLevel" prefHeight="26.0" prefWidth="97.0" promptText="Level" style="-fx-background-radius: 22; -fx-border-radius: 22;">
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                              <ComboBox fx:id="cmb_GradeSemester" prefHeight="26.0" prefWidth="127.0" promptText="Semester" style="-fx-background-radius: 22; -fx-border-radius: 22;">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                              <TextField fx:id="txt_StuID" prefHeight="26.0" prefWidth="136.0" promptText="Student ID" style="-fx-background-radius: 22; -fx-border-radius: 22;">
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button fx:id="btn_SearchStuID" layoutX="221.0" layoutY="40.0" mnemonicParsing="false" onAction="#btn_SearchStuIDActionPerformed" prefHeight="26.0" prefWidth="118.0" styleClass="btn-search" text="Search">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#f0ebeb" glyphName="SEARCH" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tableGrade" layoutY="80.0" prefHeight="553.0" prefWidth="888.0" style="-fx-border-style: solid; -fx-border-color: #00ccff;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="80.0">
+                           <columns>
+                              <TableColumn fx:id="tbl_CourseCode" prefWidth="270.40002286434174" text="Course Unit" />
+                              <TableColumn fx:id="tbl_StudentId" prefWidth="368.00006103515625" text="Student ID" />
+                              <TableColumn fx:id="tbl_Garde" maxWidth="242.0" minWidth="0.0" prefWidth="242.0" text="Grade" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="GPA">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="77.0" prefWidth="888.0" style="-fx-border-style: solid; -fx-border-color: #00ccff;" AnchorPane.bottomAnchor="540.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                           <children>
+                              <ComboBox fx:id="cmb_Level" layoutX="30.0" layoutY="40.0" prefHeight="25.0" prefWidth="156.0" promptText="Level" style="-fx-background-radius: 22; -fx-border-radius: 22;">
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" left="150.0" right="30.0" top="20.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                              <ComboBox fx:id="cmb_Semester" prefHeight="25.0" prefWidth="156.0" promptText="Semester" style="-fx-background-radius: 22; -fx-border-radius: 22;">
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" left="50.0" right="30.0" top="20.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                              <Button fx:id="btn_SearchGPA" layoutX="221.0" layoutY="40.0" mnemonicParsing="false" onAction="#btn_SearchGPAActionPerformed" prefHeight="26.0" prefWidth="118.0" styleClass="btn-search" text="Search">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#f0ebeb" glyphName="SEARCH" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" right="50.0" top="20.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tableGPA" layoutY="80.0" prefHeight="549.0" prefWidth="888.0" style="-fx-border-style: solid; -fx-border-color: #00ccff;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="80.0">
+                           <columns>
+                              <TableColumn fx:id="tbl_GPA_StudentId" prefWidth="439.20002442598343" text="Student ID" />
+                              <TableColumn fx:id="tbl_GPA" maxWidth="444.7999267578125" prefWidth="444.7999267578125" text="GPA" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+         <VBox.margin>
+            <Insets bottom="20.0" left="50.0" right="50.0" top="10.0" />
+         </VBox.margin>
+      </TabPane>
+   </children>
+</VBox>

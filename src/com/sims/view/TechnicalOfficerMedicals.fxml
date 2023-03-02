@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: white;" stylesheets="@../resource/common.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sims.control.TechnicalOfficerMedicalsController">
+   <children>
+      <VBox prefHeight="800.0" prefWidth="1000.0">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0" styleClass="dashbord-right-titlebar">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <children>
+                  <Label layoutX="14.0" layoutY="13.0" styleClass="dashbord-right-titlebar-lable" text="Medicals" />
+                  <TextField fx:id="txtStudentID" layoutX="319.0" layoutY="17.0" prefWidth="213.0" promptText="Student ID" styleClass="txtbox-search" />
+                  <DatePicker fx:id="txtDate" layoutX="549.0" layoutY="17.0" minHeight="-Infinity" minWidth="-Infinity" promptText="MM/DD/YYYY" styleClass="txtbox-search" />
+                  <Button fx:id="btnSearch" alignment="CENTER" layoutX="852.0" layoutY="17.0" mnemonicParsing="false" onAction="#searchBtnActionController" styleClass="btn-search" text="Search">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SEARCH" size="1.2em" />
+                     </graphic>
+                  </Button>
+                  <ComboBox fx:id="combCourseID" editable="true" layoutX="142.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="159.0" promptText="Course ID" styleClass="txtbox-search" />
+               </children>
+            </Pane>
+            <TabPane prefHeight="659.0" prefWidth="1306.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="tabMedicalForm" onSelectionChanged="#medicalFormActionController" text="Medical Form">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="table" layoutX="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#tableOnmouseClick" prefHeight="566.0" prefWidth="970.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <columns>
+                                    <TableColumn fx:id="colRefNo" editable="false" prefWidth="109.60000228881836" resizable="false" sortable="false" text="Ref No" />
+                                    <TableColumn fx:id="colStudentID" editable="false" prefWidth="145.6000213623047" resizable="false" sortable="false" text="Student ID" />
+                                    <TableColumn fx:id="colSubmitDate" editable="false" prefWidth="182.4000244140625" resizable="false" sortable="false" text="Submit Date" />
+                                    <TableColumn fx:id="colStartDate" editable="false" minWidth="0.0" prefWidth="182.39996337890625" resizable="false" sortable="false" text="Medical Start Date" />
+                                    <TableColumn fx:id="colEndDate" editable="false" prefWidth="174.4000244140625" resizable="false" sortable="false" text="Medical End Date" />
+                                    <TableColumn fx:id="colStatus" editable="false" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="156.79998779296875" resizable="false" sortable="false" text="Status" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="tabMedicalCourseModule" onSelectionChanged="#medicalCourseModuleActionController" text="Medical For Course Module">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="medicalCourseModule" layoutX="29.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="940.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <columns>
+                                    <TableColumn fx:id="colRefNo_cm" editable="false" prefWidth="123.20000839233398" resizable="false" sortable="false" text="Ref No" />
+                                    <TableColumn fx:id="colStudentID_cm" editable="false" prefWidth="218.3999481201172" resizable="false" sortable="false" text="Student ID" />
+                                    <TableColumn fx:id="colCourseID_cm" editable="false" prefWidth="170.40008544921875" resizable="false" sortable="false" text="Course ID" />
+                                    <TableColumn fx:id="colDateTime_cm" editable="false" minWidth="0.0" prefWidth="269.5999755859375" resizable="false" sortable="false" text="Lecture Date / Time" />
+                                    <TableColumn fx:id="colType_cm" editable="false" prefWidth="186.39996337890625" resizable="false" sortable="false" text="Type" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <Pane prefHeight="82.0" prefWidth="1000.0" style="-fx-background-color: white;">
+               <children>
+                  <Button fx:id="btnAdd" contentDisplay="CENTER" layoutX="184.0" layoutY="22.0" mnemonicParsing="false" onAction="#addMedicalBtnActionController" styleClass="btn-add" text="Add" />
+                  <Button fx:id="btnDelete" contentDisplay="CENTER" layoutX="657.0" layoutY="22.0" mnemonicParsing="false" onAction="#deleteMedicalBtnActionController" styleClass="btn-delete" text="Delete" />
+                  <Button fx:id="btnUpdate" contentDisplay="CENTER" layoutX="421.0" layoutY="22.0" mnemonicParsing="false" onAction="#updateMedicalBtnActionController" styleClass="btn-update" text="Update" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
